@@ -1,0 +1,12 @@
+<div class="input-group-btn">
+    <input type="text" class="form-control" placeholder="{{searchTitle}}" [ngModel]="text"
+           (ngModelChange)="search($event)">
+</div><!-- /input-group -->
+
+
+    <div class="list-group" *ngIf="searchResults">
+        <a routerLink="/album/{album.id}" class="list-group-item list-group-item-action" *ngFor="let album of searchResults">
+            <h5 class="list-group-item-heading">{{album.title}}</h5>
+            <p class="list-group-item-text">{{album.description}}</p>
+        </a>
+    </div>

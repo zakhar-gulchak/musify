@@ -1,16 +1,17 @@
 <div class="container">
     <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" routerLinkActive="active"><a routerLink="home">Home</a></li>
+                <li role="presentation" routerLinkActive="active"><a routerLink="about">About</a></li>
+            </ul>
+        </nav>
         <h3 class="text-muted">{{title}}</h3>
-    </div>
-
-    <div class="jumbotron">
-
     </div>
 
     <router-outlet></router-outlet>
 
     <footer class="footer">
-        <p>&copy; 2016 zahar-g, Inc.</p>
+        <p>&copy; 2016 <a href="http://github.com/zahar-g" target="_blank">github.com/zahar-g</a></p>
     </footer>
-
 </div> <!-- /container -->
