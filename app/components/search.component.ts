@@ -7,9 +7,8 @@ import { SpotifyService } from '../services/spotify.service';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/concat';
-// import 'rxjs/add/operator/forkJoin';
-import {Observable} from "rxjs/Observable";
+
+import {Observable} from "rxjs/Rx";
 
 @Component({templateUrl: 'app/components/search.component.html'})
 export class SearchComponent implements OnInit {
@@ -21,17 +20,12 @@ export class SearchComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.searchControl.valueChanges
+        this.searchResults = this.searchControl.valueChanges
             .filter(str => !!str)
             .debounceTime(500)
             .distinctUntilChanged()
-            .flatMap(str => Observable.concat(this._itunesService.searchAlbums(str),
-                                                 this._spotifyService.searchAlbums(str))
-                .subscribe(
-                    data => {
-                        this.searchResults = data[0];
-                    },
-                    err => console.error(err)
-                ));
+            .flatMap(str => Observable.forkJoin(this._spotifyService.searchAlbums(str),
+                                                this._itunesService.searchAlbums(str))
+            .map(data => Array.prototype.concat(data[0], data[1]));
     }
 }

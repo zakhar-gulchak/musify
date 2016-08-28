@@ -1,7 +1,25 @@
+/* stick footer to bottom */
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
+}
+.footer, .push {
+    height: 4em;
+}
+
 /* Space out content a bit */
 body {
     padding-top: 20px;
     padding-bottom: 20px;
+    background-color: floralwhite;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -31,22 +49,6 @@ body {
     border-top: 1px solid #e5e5e5;
 }
 
-* {
-    margin: 0;
-}
-html, body {
-    height: 100%;
-}
-.wrapper {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -4em;
-}
-.footer, .push {
-    height: 4em;
-}
-
 /* Customize container */
 @media (min-width: 768px) {
     .container {
@@ -71,17 +73,18 @@ html, body {
 .marketing p + h4 {
     margin-top: 28px;
 }
-.list-group .thumbnail {
+.list-group-item {
+    height: 125px
+}
+.list-group-item .thumbnail {
     width: 60px;
     height: 60px;
     margin-bottom: 0;
+    margin-top: 20px;
     float: left;
 }
-.list-group .list-group-item-heading {
-    padding-top: 5px;
-}
-.list-group .list-group-item-heading,
-.list-group .list-group-item-text {
+.list-group-item .list-group-item-heading,
+.list-group-item .list-group-item-text {
     padding-left: 67px;
 }
 .input-group-btn {
