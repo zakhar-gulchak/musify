@@ -1,13 +1,12 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
-import {HttpModule}       from '@angular/http'
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpModule, JsonpModule}       from '@angular/http'
 
 import {AppComponent} from './components/app.component';
 
 import {routing} from './app.routing';
 
-import {AlbumComponent} from "./components/album.component";
 import {SearchComponent} from "./components/search.component";
 import {AboutComponent} from "./components/about.component";
 
@@ -18,13 +17,13 @@ import {SpotifyService} from "./services/spotify.service";
     declarations: [
         AppComponent,
         SearchComponent,
-        AlbumComponent,
         AboutComponent
     ],
     imports: [
         BrowserModule,
-        FormsModule,
+        ReactiveFormsModule,
         HttpModule,
+        JsonpModule,
         routing
     ],
     providers: [

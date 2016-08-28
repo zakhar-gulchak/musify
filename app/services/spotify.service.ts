@@ -7,15 +7,14 @@ import 'rxjs/add/operator/map';
 export class SpotifyService {
     private spotifyUrl: string = `https://api.spotify.com/v1/search`;
     constructor(private http: Http) {
-
     }
 
     apiRequest(url: string) {
         return this.http.get(url)
-            .map(res => res.json());
+            .map(res =>  res.json().albums.items);
     }
 
-    searchMusic(str, type = 'artist') {
-        return this.apiRequest(`${this.spotifyUrl}?query=${str}&offset=0&limit=20&type=${type}&market=US`);
+    searchAlbums(str: string, type: string = 'album') {
+        return this.apiRequest(`${this.spotifyUrl}?query=${str}&offset=0&limit=20&type=${type}`);
     }
 }

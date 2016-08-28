@@ -31,6 +31,22 @@ body {
     border-top: 1px solid #e5e5e5;
 }
 
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
+}
+.footer, .push {
+    height: 4em;
+}
+
 /* Customize container */
 @media (min-width: 768px) {
     .container {
@@ -45,6 +61,7 @@ body {
 .jumbotron {
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
+    margin-top: 10px;
 }
 
 /* Supporting marketing content */
@@ -53,6 +70,22 @@ body {
 }
 .marketing p + h4 {
     margin-top: 28px;
+}
+.list-group .thumbnail {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0;
+    float: left;
+}
+.list-group .list-group-item-heading {
+    padding-top: 5px;
+}
+.list-group .list-group-item-heading,
+.list-group .list-group-item-text {
+    padding-left: 67px;
+}
+.input-group-btn {
+    padding: 10px 0;
 }
 
 /* Responsive: Portrait tablets and up */

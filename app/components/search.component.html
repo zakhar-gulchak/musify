@@ -1,12 +1,12 @@
 <div class="input-group-btn">
-    <input type="text" class="form-control" placeholder="{{searchTitle}}" [ngModel]="text"
-           (ngModelChange)="search($event)">
+    <input type="text" class="form-control" placeholder="{{searchTitle}}" [formControl]="searchControl">
 </div><!-- /input-group -->
 
-
-    <div class="list-group" *ngIf="searchResults">
-        <a routerLink="/album/{album.id}" class="list-group-item list-group-item-action" *ngFor="let album of searchResults">
-            <h5 class="list-group-item-heading">{{album.title}}</h5>
-            <p class="list-group-item-text">{{album.description}}</p>
-        </a>
-    </div>
+<div class="list-group">
+    <a href="{{album.external_urls ? album.external_urls.spotify : album.collectionViewUrl}}" class="list-group-item list-group-item-action clearfix" target="_blank"
+       *ngFor="let album of searchResults | async">
+        <img class="thumbnail" src="{{album.images ? album.images[2].url : album.artworkUrl60}}" />
+        <h5 class="list-group-item-heading">{{album.name || album.collectionName}}</h5>
+        <p class="list-group-item-text">Album type: {{album.type || album.collectionType}}</p>
+    </a>
+</div>
