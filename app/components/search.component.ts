@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
             .debounceTime(500)
             .distinctUntilChanged()
             .flatMap(str => Observable.forkJoin(this._spotifyService.searchAlbums(str),
-                                                this._itunesService.searchAlbums(str))
+                                                this._itunesService.searchAlbums(str)))
             .map(data => Array.prototype.concat(data[0], data[1]));
     }
 }
