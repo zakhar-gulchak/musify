@@ -1,1 +1,1 @@
-# App deployed here https://heroku.com
+# App deployed here https://musify-app.heroku.com
