@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl} from "@angular/forms";
+import {FormControl} from '@angular/forms';
 
 import { ItunesService } from '../services/itunes.service';
 import { SpotifyService } from '../services/spotify.service';
@@ -8,7 +8,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-import {Observable} from "rxjs/Rx";
+import {Observable} from 'rxjs/Rx';
 
 @Component({templateUrl: 'app/components/search.component.html'})
 export class SearchComponent implements OnInit {

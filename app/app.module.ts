@@ -7,11 +7,11 @@ import {AppComponent} from './components/app.component';
 
 import {routing} from './app.routing';
 
-import {SearchComponent} from "./components/search.component";
-import {AboutComponent} from "./components/about.component";
+import {SearchComponent} from './components/search.component';
+import {AboutComponent} from './components/about.component';
 
-import {ItunesService} from "./services/itunes.service";
-import {SpotifyService} from "./services/spotify.service";
+import {ItunesService} from './services/itunes.service';
+import {SpotifyService} from './services/spotify.service';
 
 @NgModule({
     declarations: [
