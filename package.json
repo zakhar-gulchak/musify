@@ -6,6 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8080",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "clean": "rm -rf dist && rm -rf app/*.ngfactory.ts && cd compiled && ls | grep -v main-ngc.ts | xargs rm && cd ..",
+    "ngc": "ngc -p . && cp app/* compiled",
     "postinstall": "typings install"
   },
   "repository": {
@@ -25,7 +27,6 @@
     "@angular/platform-browser-dynamic": "2.0.0-rc.6",
     "@angular/router": "3.0.0-rc.2",
 
-    "systemjs": "0.19.37",
     "core-js": "^2.4.1",
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-beta.11",
@@ -35,7 +36,6 @@
     "jquery": "^3.1.0"
   },
   "devDependencies": {
-    "@types/core-js": "0.9.32",
     "angular2-template-loader": "^0.4.0",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -49,7 +49,10 @@
     "typings": "^1.3.3",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1",
-    "webpack-merge": "^0.14.1"
+    "webpack-merge": "^0.14.1",
+    "@angular/compiler-cli": "0.6.0",
+    "@angular/platform-server": "2.0.0-rc.6",
+    "@angular/compiler": "2.0.0-rc.6"
   },
   "homepage": "https://github.com/zahar-g/musify#readme",
   "engines": {
