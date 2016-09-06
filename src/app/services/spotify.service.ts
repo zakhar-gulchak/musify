@@ -13,7 +13,7 @@ export class SpotifyService {
         return this.http.get(url)
             .map(res =>  res.json().albums.items)
             .flatMap(data => {
-                let ids = data.map(cur => cur.id).join(',');
+                let ids = data.map((cur: any) => cur.id).join(',');
                 return this.http.get(`${this.spotifyUrl}albums/?ids=${ids}`)
                     .map(res =>  res.json().albums);
             });

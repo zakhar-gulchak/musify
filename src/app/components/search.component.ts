@@ -10,7 +10,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 
 import {Observable} from 'rxjs/Rx';
 
-@Component({templateUrl: 'app/components/search.component.html'})
+@Component({templateUrl: 'search.component.html'})
 export class SearchComponent implements OnInit {
     searchTitle: string = 'Search your favourite albums...';
     searchControl: FormControl = new FormControl();
