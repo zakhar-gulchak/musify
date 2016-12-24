@@ -285,13 +285,13 @@ export class SeedConfig {
    * The required NPM version to run the application.
    * @type {string}
    */
-  VERSION_NPM = '2.14.2';
+  VERSION_NPM = '4.0.5';
 
   /**
    * The required NodeJS version to run the application.
    * @type {string}
    */
-  VERSION_NODE = '4.0.0';
+  VERSION_NODE = '7.0.2';
 
   /**
    * Enable SCSS stylesheet compilation.
@@ -301,7 +301,7 @@ export class SeedConfig {
   ENABLE_SCSS = ['true', '1'].indexOf(`${process.env.ENABLE_SCSS}`.toLowerCase()) !== -1 || argv['scss'] || false;
 
   /**
-   * The list of NPM dependcies to be injected in the `index.html`.
+   * The list of NPM dependencies to be injected in the `index.html`.
    * @type {InjectableDependency[]}
    */
   NPM_DEPENDENCIES: InjectableDependency[] = [
@@ -311,6 +311,10 @@ export class SeedConfig {
     { src: 'systemjs/dist/system.src.js', inject: 'shims', buildType: BUILD_TYPES.DEVELOPMENT },
     // Temporary fix. See https://github.com/angular/angular/issues/9359
     { src: '.tmp/Rx.min.js', inject: 'libs', buildType: BUILD_TYPES.DEVELOPMENT },
+
+    { src: 'jquery/dist/jquery.js', inject: 'libs' },
+    { src: 'bootstrap/dist/js/bootstrap.min.js', inject: 'libs'},
+    { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true }
   ];
 
   /**
