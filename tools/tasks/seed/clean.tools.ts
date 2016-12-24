@@ -11,8 +11,9 @@ import Config from '../../config';
  *
  */
 export = clean([
-    'gulpfile.js',
-    'gulpfile.js.map',
-    join(Config.TOOLS_DIR, '**/*.js'),
-    join(Config.TOOLS_DIR, '**/*.js.map')
+  'gulpfile.js',
+  'gulpfile.js.map',
+  join(Config.TOOLS_DIR, '**/*.js'),
+  join(Config.TOOLS_DIR, '**/*.js.map')
 ]);
+
