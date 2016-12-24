@@ -14,9 +14,9 @@ import { SpotifyService } from './services/spotify.service';
  */
 
 @NgModule({
-    imports: [CommonModule, RouterModule],
+    imports: [CommonModule, RouterModule, ReactiveFormsModule],
     declarations: [SearchComponent, NavbarComponent],
-    exports: [SearchComponent, NavbarComponent, CommonModule, RouterModule, ReactiveFormsModule]
+    exports: [SearchComponent, NavbarComponent, CommonModule, RouterModule]
 })
 export class SharedModule {
     static forRoot(): ModuleWithProviders {
