@@ -1,8 +1,10 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { SearchComponent } from './search/index';
+import { NavbarComponent } from './navbar/index';
 
 import { ItunesService } from './services/itunes.service';
 import { SpotifyService } from './services/spotify.service';
@@ -13,8 +15,8 @@ import { SpotifyService } from './services/spotify.service';
 
 @NgModule({
     imports: [CommonModule, RouterModule],
-    declarations: [SearchComponent],
-    exports: [SearchComponent, CommonModule, RouterModule]
+    declarations: [SearchComponent, NavbarComponent],
+    exports: [SearchComponent, NavbarComponent, CommonModule, RouterModule, ReactiveFormsModule]
 })
 export class SharedModule {
     static forRoot(): ModuleWithProviders {

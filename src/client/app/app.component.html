@@ -1,15 +1,6 @@
 <div class="container wrapper">
     <div class="header clearfix">
-        <nav>
-            <ul class="nav nav-pills pull-right">
-                <li [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">
-                    <a [routerLink]="['/']">Home</a>
-                </li>
-                <li [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">
-                    <a [routerLink]="['/about']">About</a>
-                </li>
-            </ul>
-        </nav>
+        <nav-bar></nav-bar>
         <h3 class="text-muted">{{title}}</h3>
     </div>
     <search-bar></search-bar>
