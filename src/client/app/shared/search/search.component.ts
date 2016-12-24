@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl} from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 import { ItunesService } from '../services/itunes.service';
 import { SpotifyService } from '../services/spotify.service';
 
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
+import '../../operators';
 
-import {Observable} from 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 
-@Component({templateUrl: 'search.component.html'})
+@Component({
+    moduleId: module.id,
+    selector: 'search-bar',
+    templateUrl: 'search.component.html'
+})
 export class SearchComponent implements OnInit {
     searchTitle: string = 'Search your favourite albums...';
     searchControl: FormControl = new FormControl();
