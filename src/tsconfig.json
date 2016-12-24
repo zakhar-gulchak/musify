@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "module": "es2015",
-    "moduleResolution": "node",
+    "target": "es5",
+    "module": "commonjs",
     "declaration": false,
     "removeComments": true,
+    "noLib": false,
+    "lib": ["es2016", "dom"],
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
@@ -15,14 +16,21 @@
     "noImplicitReturns": true,
     "noImplicitUseStrict": false,
     "noFallthroughCasesInSwitch": true,
-    "outDir": "./dist",
-    "rootDir": "./src/app"
+    "typeRoots": [
+      "../../node_modules/@types",
+      "../../node_modules"
+    ],
+    "types": [
+      "node",
+      "jasmine",
+      "protractor",
+      "systemjs"
+    ]
   },
-  "angularCompilerOptions": {
-    "debug": true
-  },
-  "compileOnSave": false,
-  "files": [
-    "src/app/main.ts"
-  ]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src"
+  ],
+  "compileOnSave": false
 }
