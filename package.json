@@ -14,7 +14,7 @@
     "generate.manifest": "gulp generate.manifest --color",
     "e2e": "protractor",
     "e2e.live": "protractor --elementExplorer",
-    "gulp": "node_modules/.bin/gulp",
+    "gulp": "gulp",
     "i18n": "ng-xi18n && gulp clean.i18n",
     "lint": "gulp tslint",
     "karma": "karma",
