@@ -147,6 +147,7 @@
   "homepage": "https://github.com/zahar-g/musify#readme",
   "engines": {
     "node": "7.3.0",
-    "npm": "4.0.5"
+    "npm": "4.0.5",
+    "yarn": "0.18.1"
   }
 }
