@@ -77,7 +77,7 @@
   ],
 
   "serve.prod": [
-    "build.prod",
+//    "build.prod",
     "server.prod"
   ],
 
