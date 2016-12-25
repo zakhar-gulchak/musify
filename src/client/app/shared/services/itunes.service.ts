@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import {Jsonp} from '@angular/http';
+import { Jsonp } from '@angular/http';
 
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ItunesService {
     private itunesUrl: string = `https://itunes.apple.com/search`;
-    constructor(private jsonp: Jsonp) {
-    }
+
+    constructor(private jsonp: Jsonp) { }
 
     apiRequest(url: string) {
         return this.jsonp.get(url)
