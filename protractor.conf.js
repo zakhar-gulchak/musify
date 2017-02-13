@@ -16,7 +16,7 @@ const config = {
     // showTiming: true,
     showColors: true,
     isVerbose: false,
-    includeStackTrace: false
+    includeStackTrace: false,
     // defaultTimeoutInterval: 400000
   },
 
