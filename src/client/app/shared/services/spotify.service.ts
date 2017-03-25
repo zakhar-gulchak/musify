@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, RequestOptions, Headers } from '@angular/http';
 
 import 'rxjs/add/operator/map';
 
@@ -10,7 +10,11 @@ export class SpotifyService {
     }
 
     apiRequest(url: string) {
-        return this.http.get(url)
+        // let headers = new Headers({'Access-Control-Request-Headers': 'Access-Control-Allow-Origin, X-XSRF-TOKEN'});
+        let headers = new Headers({'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Access-Control-Allow-Origin, X-XSRF-TOKEN'});
+        let options = new RequestOptions({headers});
+
+        return this.http.get(url, options)
             .map(res =>  res.json().albums.items)
             .flatMap(data => {
                 let ids = data.map((cur: any) => cur.id).join(',');
