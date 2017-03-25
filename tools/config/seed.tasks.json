@@ -109,12 +109,10 @@
   ],
 
   "serve.prod": [
-    "build.prod",
     "server.prod"
   ],
 
   "serve.prod.aot": [
-    "build.prod.aot",
     "server.prod"
   ],
 
