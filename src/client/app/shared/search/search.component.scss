@@ -1,0 +1,13 @@
+.list-group-item {
+    height: 135px;
+    padding: 0;
+    .list-group-item-action {
+        height: 100%;
+        padding: 10px;
+        line-height: 1.2;
+
+        .list-group-item-heading {
+            font-size: 16px;
+        }
+    }
+}

@@ -11,7 +11,8 @@ import { Observable } from 'rxjs/Rx';
 @Component({
     moduleId: module.id,
     selector: 'search-bar',
-    templateUrl: 'search.component.html'
+    templateUrl: 'search.component.html',
+    styleUrls: ['search.component.css']
 })
 export class SearchComponent implements OnInit {
     searchTitle: string = 'Search your favourite albums...';

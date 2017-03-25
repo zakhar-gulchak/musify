@@ -23,11 +23,14 @@ export class ProjectConfig extends SeedConfig {
     this.NPM_DEPENDENCIES = [
       ...this.NPM_DEPENDENCIES,
         { src: 'jquery/dist/jquery.js', inject: 'libs' },
+        { src: 'tether/dist/js/tether.min.js', inject: 'libs'},
         { src: 'bootstrap/dist/js/bootstrap.min.js', inject: 'libs'},
         { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true }
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
       // {src: 'lodash/lodash.min.js', inject: 'libs'},
     ];
+
+    this.ENABLE_SCSS = 1;
 
     // Add `local` third-party libraries to be injected/bundled.
     this.APP_ASSETS = [

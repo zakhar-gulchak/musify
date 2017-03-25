@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
 import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class SpotifyService {
@@ -14,6 +15,10 @@ export class SpotifyService {
             .map((res: any) =>  res.json().albums.items)
             .flatMap((data: any) => {
                 let ids = data.map((cur: any) => cur.id).join(',');
+                if (ids.length === 0) {
+                    return Observable.throw('Internal server error');
+                }
+
                 return this.http.get(`${this.spotifyUrl}albums/?ids=${ids}`)
                     .map((res: any) =>  res.json().albums);
             });

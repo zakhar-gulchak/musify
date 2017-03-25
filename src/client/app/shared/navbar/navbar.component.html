@@ -1,10 +1,10 @@
 <nav>
-    <ul class="nav nav-pills pull-right">
-        <li role="presentation" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-            <a [routerLink]="['']">Home</a>
+    <ul class="nav nav-bordered">
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Home</a>
         </li>
-        <li role="presentation" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-            <a [routerLink]="['about']">About</a>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['about']"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">About</a>
         </li>
     </ul>
 </nav>

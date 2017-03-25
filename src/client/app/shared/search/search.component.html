@@ -2,16 +2,17 @@
     <input type="text" class="form-control" placeholder="{{searchTitle}}" [formControl]="searchControl">
 </div><!-- /input-group -->
 
-<div class="list-group">
-    <a href="{{album.external_urls ? album.external_urls.spotify : album.collectionViewUrl}}" class="list-group-item list-group-item-action clearfix" target="_blank"
-       *ngFor="let album of searchResults | async">
-        <img class="thumbnail" src="{{album.images ? album.images[2].url : album.artworkUrl60}}" />
-        <h5 class="list-group-item-heading">{{album.name || album.collectionName}} - {{album.artistName || album.artists[0].name}}</h5>
-        <p class="list-group-item-text">
-            <i>Album type:</i> <b>{{album.album_type || album.collectionType}}</b> <br>
-            <i>Genre:</i> <b>{{album.primaryGenreName || (album.genres.length ? album.genres : '-') }}</b> <br>
-            <i>Release date:</i> <b>{{(album.releaseDate || album.release_date) | date}}</b> <br>
-            <i>Source:</i> <b>{{album.collectionName ? 'iTunes' : 'Spotify' }}</b>
-        </p>
-    </a>
-</div>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let album of searchResults | async">
+        <a class="list-group-item-action" href="{{album.external_urls ? album.external_urls.spotify : album.collectionViewUrl}}" target="_blank">
+            <img class="thumbnail" src="{{album.images ? album.images[2].url : album.artworkUrl60}}" />
+            <h5 class="list-group-item-heading">{{album.name || album.collectionName}} - {{album.artistName || album.artists[0].name}}</h5>
+            <p class="list-group-item-text">
+                <i>Album type:</i> <b>{{album.album_type || album.collectionType}}</b> <br>
+                <i>Genre:</i> <b>{{album.primaryGenreName || (album.genres.length ? album.genres : '-') }}</b> <br>
+                <i>Release date:</i> <b>{{(album.releaseDate || album.release_date) | date}}</b> <br>
+                <i>Source:</i> <b>{{album.collectionName ? 'iTunes' : 'Spotify' }}</b>
+            </p>
+        </a>
+    </li>
+</ul>
