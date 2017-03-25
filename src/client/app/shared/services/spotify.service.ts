@@ -11,7 +11,8 @@ export class SpotifyService {
 
     apiRequest(url: string) {
         // let headers = new Headers({'Access-Control-Request-Headers': 'Access-Control-Allow-Origin, X-XSRF-TOKEN'});
-        let headers = new Headers({'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Access-Control-Allow-Origin, X-XSRF-TOKEN'});
+        let headers = new Headers({'Access-Control-Allow-Headers':
+            'Access-Control-Allow-Headers, Access-Control-Allow-Origin, X-XSRF-TOKEN'});
         let options = new RequestOptions({headers});
 
         return this.http.get(url, options)
