@@ -23,14 +23,8 @@
     "types": [
       "node",
       "jasmine",
-      "protractor",
       "systemjs"
     ]
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "src"
-  ],
   "compileOnSave": false
 }
